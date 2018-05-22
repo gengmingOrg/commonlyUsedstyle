@@ -1,0 +1,19 @@
+.page-right-item {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 0 5px;
+}
+.page-container {
+  /* display: inline; */
+  width: 50%;
+
+  display: inline-block;
+}
+.page-row {
+  display: flex;
+}
+.page-row :first-child {
+  border-right: 1px solid #000;
+  border-left: 10px solid #000;
+  padding-left: 10px;
+}

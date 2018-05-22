@@ -1,0 +1,79 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  outline-style: none;
+  /*FF*/
+}
+
+body {
+    background: #ddd;
+}
+div {
+
+}
+.page-title {
+  background: #fff;
+  height: 50px;
+  margin: 10px;
+
+}
+.page-title-content {
+  width:  auto;
+  height: 20px;
+  /* margin: 5px; */
+  display: flex;
+  position: relative;
+
+  top: 15px;
+}
+.page-title-content > div {
+  line-height: 20px;
+  font-size: 14px;
+  width: 74px;
+  padding:0 10px;
+  text-align: center;
+
+
+}
+.page-title-content > div.active {
+  background: red;
+  /* margin: 10px 0; */
+  border-radius: 8px;
+
+}
+button {
+    background: red;
+    border-radius: 8px;
+    padding: 4px 20px;
+}
+.page-button {
+  display: flex;
+}
+.page-button button {
+  margin: 0 20px;
+}
+.page-content {
+  background: #fff;
+  margin: 10px;
+  display: flex;
+}
+.page-content-item {
+  border: 1px solid blue;
+  width: 30%;
+  margin:10px 3%;
+}
+.page-content-item-bottom {
+  background: #ddd;
+  border-top: 1px solid black;
+  padding: 4px;
+}
+.page-content-item-bottom-l {
+  padding: 4px ;
+  width: 70%;
+  border-right: 1px solid black;
+}
