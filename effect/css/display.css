@@ -1,0 +1,99 @@
+.inputone {}
+
+/*清浮动*/
+
+.cleanfloat::after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.cleanfloat {
+  margin: 0;
+}
+
+/*五角星样式*/
+
+ul li {
+  list-style: none;
+  float: left;
+  font-size: 20px;
+  margin: 0px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+/*五角星点击后样式*/
+
+.hs, .cs {
+  color: #f00;
+}
+
+.page-content {
+  border: 1px solid #ddd;
+  height: 200px;
+  margin-bottom: 300px;
+  width: 30%
+}
+
+.page-top {
+  height: 80%;
+  display: flex;
+}
+
+.page-top-l {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.page-top-r {
+  padding-top: 16px;
+  width: 80%;
+}
+
+.page-top-r-r {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #696969;
+}
+
+.page-bottom {
+  height: 20%;
+  background: #f5f7fa;
+  display: flex;
+}
+
+.page-bottom-l {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+.page-bottom-l span {
+  padding-left: 15px;
+  color: #1890ff;
+  text-decoration: underline;
+}
+.page-bottom-r {
+  width: 30%;
+  display: flex;
+  align-items: center;
+
+}
+.page-bottom-r  div {
+  border-left:  1px solid #ddd;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.page-bottom-r button {
+  background: #1890ff;
+  color: #fff;
+  border-radius: 10px;
+  padding: 6px 15px;
+}
