@@ -34,7 +34,7 @@ ul li {
 .page-content {
   border: 1px solid #ddd;
   height: 200px;
-  margin-bottom: 300px;
+
   width: 30%
 }
 
@@ -89,6 +89,7 @@ ul li {
   width: 100%;
   display: flex;
   align-items: center;
+  /* 改变水平的轴 */
   flex-direction: column;
 }
 .page-bottom-r button {
@@ -96,4 +97,63 @@ ul li {
   color: #fff;
   border-radius: 10px;
   padding: 6px 15px;
+}
+
+.page-buttonItem {
+  display: flex;
+  align-items: center;
+
+}
+
+.page-buttonItem button.active{
+  background: #1890ff;
+  color: #fff;
+}
+.page-buttonItem button {
+  margin-right: 30px;
+}
+.page-buttonItem input {
+  outline: none;
+  height: 29px;
+  padding: 0px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-indent: 6px;
+  width: 210px;
+}
+button {
+  outline: none;
+  border-radius: 10px;
+  padding: 6px 15px;
+}
+.page-input-img {
+  position: relative;
+}
+.page-input-img img{
+  position: absolute;
+  top: 7px;
+  right: 6px;
+  width: 16px;
+}
+
+.table-style {
+
+}
+
+
+.page-table {
+	width: 100%;
+	max-width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+	text-align: center;
+
+	table-layout: fixed;
+}
+.page-table-head {
+  border-bottom: 1px solid #ddd;
+  background: #fafafa;
+}
+tbody tr:nth-child(even) {
+	background: #fafafa;
 }

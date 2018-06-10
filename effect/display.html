@@ -66,17 +66,15 @@
   <div class="page-content" style="margin-top: 10px">
     <div class="page-top">
       <div class="page-top-l">
-          <img src="./img/img_three.png" alt="" >
+        <img src="./img/img_three.png" alt="">
       </div>
       <div class="page-top-r">
-            <div class="page-top-r-l">
-              dataplatform
-            </div>
-            <div class="page-top-r-r">
-              哈哈哈自主研发的与数据的滚利系统
-              哈哈哈自主研发的与数据的滚利系统
-              哈哈哈自主研发的与数据的滚利系统
-            </div>
+        <div class="page-top-r-l">
+          dataplatform
+        </div>
+        <div class="page-top-r-r">
+          哈哈哈自主研发的与数据的滚利系统 哈哈哈自主研发的与数据的滚利系统 哈哈哈自主研发的与数据的滚利系统
+        </div>
       </div>
     </div>
     <div class="page-bottom">
@@ -98,10 +96,89 @@
 
     </div>
   </div>
+  <div class="page-buttonItem" style="margin-top: 10px">
+    <div class="">
+      <button type="button" name="button" class="active">默认排序</button>
+    </div>
+    <div class="">
+      <button type="button" name="button">申请数</button>
+    </div>
+    <div class="">
+      <button type="button" name="button">评分</button>
+    </div>
+    <div class="page-input-img">
+
+      <input type="text" name="" value="" placeholder="请输入。。。">
+
+      <img src="./img/img_three.png" alt="">
+    </div>
+
+  </div>
 
 
+  <table id="cost5" class="page-table" style="margin-top: 10px">
+    <thead class="page-table-head">
+      <tr>
+        <th>产品名称</th>
+        <th>产品类型</th>
+        <th>归属项目</th>
+        <th>产品简述</th>
+        <th>价格区间(万)</th>
+        <th value='time' onclick="sortTr(this)">创建时间</th>
+
+        <th>最新版本</th>
+        <th>操作 <span>请按要求打包产品文件!查看产品打包要求</span></th>
+      </tr>
+    </thead>
+    <tbody class="page-table-body js_contain">
+
+    </tbody>
+  </table>
+  <input type="range" name="" value="" onchange="showvalue(this)">
+
+  <div class="" style="height: 200px; background: aquamarine; position: relative;">
+    <img style='position: relative;' src="./img/img_three.png" alt="" id="drag">
+  </div>
 
 </body>
 <script src="./js/pluging/jquery-1.8.0.min.js"></script>
 <script src="./js/display.js"></script>
+<script type="text/javascript">
+  var log = console.log.bind('console')
+  var showvalue = function(event) {
+    log(event.value)
+  }
+
+    //拖拽功能(主要是触发三个事件：onmousedown\onmousemove\onmouseup)
+    var drag = document.getElementById('drag');
+
+    //点击某物体时，用drag对象即可，move和up是全局区域，也就是整个文档通用，应该使用document对象而不是drag对象(否则，采用drag对象时物体只能往右方或下方移动)
+    drag.onmousedown = function(e) {
+      log("down")
+      var e = e || window.event; //兼容ie浏览器
+      var diffX = e.clientX - drag.offsetLeft; //鼠标点击物体那一刻相对于物体左侧边框的距离=点击时的位置相对于浏览器最左边的距离-物体左边框相对于浏览器最左边的距离
+      var diffY = e.clientY - drag.offsetTop;
+
+      document.onmousemove = function(e) {
+        log('move')
+        var e = e || window.event; //兼容ie浏览器
+        var left = e.clientX - diffX;
+        var top = e.clientY - diffY;
+        //移动时重新得到物体的距离，解决拖动时出现晃动的现象
+        drag.style.left = left + 'px';
+        drag.style.top = top + 'px';
+      };
+      document.onmouseup = function(e) { //当鼠标弹起来的时候不再移动
+        log('up')
+        this.onmousemove = null;
+        this.onmouseup = null; //预防鼠标弹起来后还会循环（即预防鼠标放上去的时候还会移动）
+
+
+      }
+    }
+
+</script>
+
+</script>
+
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+      div{
+        margin-top: 10px;
+
+      }
+      img {
+        width: 500px;
+        overflow: hidden;background: #eee;margin-bottom: 20px;
+      }
+    </style>
+</head>
+
+<body>
+
+  <div class="" style="height: 500px; background: aquamarine;display: flex;align-items: center; justify-content: center; ">
+    <img  data-src="./img/img_three0.png" alt="loading" id="drag">
+  </div>
+  <div class="" style="height: 500px; background: aquamarine;display: flex;align-items: center; justify-content: center; ">
+    <img  data-src="./img/img_three1.png" alt="loading" id="drag">
+  </div>
+  <div class="" style="height: 500px; background: aquamarine;display: flex;align-items: center; justify-content: center; ">
+    <img  data-src="./img/img_three2.png" alt="loading" id="drag">
+  </div>
+  <div class="" style="height: 500px; background: aquamarine;display: flex;align-items: center; justify-content: center; ">
+    <img  data-src="./img/img_three3.png" alt="loading" id="drag">
+  </div>
+  <div class="" style="height: 500px; background: aquamarine;display: flex;align-items: center; justify-content: center; ">
+    <img  data-src="./img/img_three4.png" alt="loading" id="drag">
+  </div>
+</body>
+<script type="text/javascript">
+  //点击某物体时，用drag对象即可，move和up是全局区域，也就是整个文档通用，应该使用document对象而不是drag对象(否则，采用drag对象时物体只能往右方或下方移动)
+  var log = console.log.bind('console')
+  //查找所有图片元素
+    var img=document.querySelectorAll('img'),
+    //获取浏览器视窗的高度
+        height=500
+
+    layzy();
+    //监听滚动条方法
+    window.onscroll=layzy;
+
+
+    function layzy(){
+        //遍历所有图片节点
+        for(var i=0;i<img.length;i++){
+            //闭包i,这里可以不用闭包。。。。
+            (function(index){
+                //获取当前遍历元素的top偏移值
+                var top=img[index].getBoundingClientRect().top;
+                //如果他的top值小于或等于视窗高度，则进入视窗
+                if(top<=height){
+                    //显示图片
+                    img[index].src=img[index].dataset.src
+                }
+            })(i)
+        }
+    }
+</script>
+
+</html>

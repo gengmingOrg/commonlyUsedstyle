@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div class="" style="height: 200px; background: aquamarine; position: relative;">
+    <img style='position: relative;' src="./img/img_three.png" alt="" id="drag">
+  </div>
+</body>
+<script type="text/javascript">
+  //点击某物体时，用drag对象即可，move和up是全局区域，也就是整个文档通用，应该使用document对象而不是drag对象(否则，采用drag对象时物体只能往右方或下方移动)
+  var log = console.log.bind('console')
+  var drag = document.getElementById('drag');
+  drag.onmousedown = function(e) {
+    document.onmousemove = function(e) {
+      drag.style.left = e.clientX + 'px';
+      drag.style.top = e.clientY + 'px';
+    };
+    document.onmouseup = function(e) {
+
+      this.onmousemove = null;
+      this.onmouseup = null;
+
+
+    }
+  }
+</script>
+
+</html>
